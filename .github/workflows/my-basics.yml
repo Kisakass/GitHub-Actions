@@ -26,7 +26,7 @@ jobs:
       run: |
         echo "Hello Message1"
         echo "Hello Message2"
-        echo "Aplication name: ${{env.APLICATION_NAME }}
+        echo "Aplication name: ${{env.APLICATION_NAME }}"
       
       
     
@@ -41,4 +41,4 @@ jobs:
       
     - name: Printing Deployment package
       run:
-        echo: "Deoplot package name is ${{ env.PACKAGE_NAME }}"
+        echo "Deoploy package name is ${{ env.PACKAGE_NAME }}"
