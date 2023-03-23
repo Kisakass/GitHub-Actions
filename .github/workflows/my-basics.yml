@@ -2,6 +2,10 @@
 # GitHub Actions by Olexandr Havryliuk
 #--------------------
 name: my-githubActions-basics
+env:
+  APLICATION_NAME: "MY-FLASK"
+  PACKAGE_NAME: "flask_deploy_file version: ${{ github.sha }}"
+  
 
 on:
   push:
@@ -18,6 +22,12 @@ jobs:
     - name: Print Hello message
       run: echo "Hello world from Testing"
       
+    - name: Execute few commands
+      run: |
+        echo "Hello Message1"
+        echo "Hello Message2"
+        echo "Aplication name: ${{env.APLICATION_NAME }}
+      
       
     
   my_deploy:
@@ -28,3 +38,7 @@ jobs:
     steps:
     - name: Print Hello message
       run: echo "Hello world from Deploy"
+      
+    - name: Printing Deployment package
+      run:
+        echo: "Deoplot package name is ${{ env.PACKAGE_NAME }}"
