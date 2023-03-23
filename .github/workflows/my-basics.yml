@@ -31,7 +31,7 @@ jobs:
     - name: gitclone my repo
       uses: actions/checkout@v1
     - name: list current folder
-      run: ls -
+      run: ls -a
       
     - name: Lets test some packages if the are here 1
       run: aws --version
