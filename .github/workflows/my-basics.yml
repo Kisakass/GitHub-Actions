@@ -34,20 +34,33 @@ jobs:
       run: ls -a
       
     - name: Lets test some packages if the are here 1
-      run: aws --version
-    - name: Lets test some packages if the are here 2
-      run: zip 
-      
+      run: aws --version          
     
   my_deploy:
   
     runs-on: ubuntu-latest
     needs: [my_testing]
     
+    # Job variables
+    env:
+      VAR1: "This is job level 1"
+      VAR2: "This is job level 2"
+    
     steps:
     - name: Print Hello message
       run: echo "Hello world from Deploy"
+    
+    - name: print env vars
+      run: |
+        echo " Var1: ${{ env.VAR1}}, Var2: ${{ env.VAR2 }}"
+        echo "Var3: $LOCAL_VAR"
+    # Local step vars
+      env:
+        LOCAL_VAR: "This is super puper local var"
       
     - name: Printing Deployment package
       run:
         echo "Deoploy package name is ${{ env.PACKAGE_NAME }}"
+        
+    - name: Lets test some packages if the are here 2
+      run: zip 
