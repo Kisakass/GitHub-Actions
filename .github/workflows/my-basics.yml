@@ -26,13 +26,12 @@ jobs:
       run: |
         echo "Hello Message1"
         echo "Hello Message2"
-        echo "Aplication name: ${{env.APLICATION_NAME }}"
-        
-    - name: list current folder
-      run: ls -a
+        echo "Aplication name: ${{env.APLICATION_NAME }}"        
       
     - name: gitclone my repo
       uses: actions/checkout@v1
+    - name: list current folder
+      run: ls -a
       
       
     
