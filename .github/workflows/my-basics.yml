@@ -31,6 +31,9 @@ jobs:
     - name: list current folder
       run: ls -a
       
+    - name: gitclone my repo
+      uses: actions/checkout@v1
+      
       
     
   my_deploy:
