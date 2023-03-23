@@ -1,0 +1,28 @@
+#--------------------
+# GitHub Actions by Olexandr Havryliuk
+#--------------------
+name: my-githubActions-basics
+
+on:
+  push:
+    branches:
+      - main
+      
+      
+jobs:
+  my_testing:
+  
+    runs-on: ubuntu-ltest
+    
+    steps:
+    - name: Print Hello message
+      run: echo "Hello world from testing"
+      
+    
+  my_deploy:
+  
+    runs-on: ubuntu-latest
+    
+    steps: 
+    - name: Print Hello message
+      run: echo "Hello world from deploy"
